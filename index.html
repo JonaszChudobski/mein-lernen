@@ -12,41 +12,6 @@
       rel="stylesheet"
     />
     <link href="style/styles.css" rel="stylesheet" />
-    <script>
-      function formvalidation() {
-        var firstname = document.forms.RegForm.fname.value;
-        var lastname = document.forms.RegForm.lname.value;
-        var street = document.forms.RegForm.street.value;
-        var city = document.forms.RegForm.city.value;
-        var regName = /\d+$/g;
-
-        if (firstname == "" || regName.test(firstname)) {
-          window.alert("Proszę wpisać właściwe dane.");
-          firstname.focus();
-          return false;
-        }
-
-        if (lastname == "" || regName.test(lastname)) {
-          window.alert("Proszę wpisać właściwe dane.");
-          lastname.focus();
-          return false;
-        }
-
-        if (street == "" || regName.test(street)) {
-          window.alert("Proszę wpisać właściwe dane.");
-          street.focus();
-          return false;
-        }
-
-        if (city == "" || regName.test(city)) {
-          window.alert("Proszę wpisać właściwe dane.");
-          city.focus();
-          return false;
-        }
-
-        return true;
-      }
-    </script>
   </head>
   <body>
     <header class="upside-bar">
@@ -156,25 +121,38 @@
           </p>
         </section>
       </article>
-      <form
-        class="main-form"
-        name="RegForm"
-        onsubmit="return formvalidation()"
-        method="post"
-        action=""
-      >
+      <form id="data-form" class="form">
         <h3>Wyślij mi swoje dane, a nuż się przydadzą:</h3>
-        <label class="form-label" for="fname">Imię:</label>
-        <input type="text" id="fname" name="fname" />
-        <label class="form-label" for="lname">Nazwisko:</label>
-        <input type="text" id="lname" name="lname" />
-        <label class="form-label" for="street">Ulica:</label>
-        <input type="text" id="street" name="street" />
-        <label class="form-label" for="city">Miasto:</label>
-        <input type="text" id="city" name="city" />
-        <input type="submit" value="Wyślij" name="Submit" />
-        <input type="reset" value="Zresetuj formularz" name="Reset" />
+        <div class="form-field">
+          <label for="firstname">Imię:</label>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            autocomplete="off"
+          />
+          <small></small>
+        </div>
+        <div class="form-field">
+          <label for="lastname">Nazwisko:</label>
+          <input type="text" name="lastname" id="lastname" autocomplete="off" />
+          <small></small>
+        </div>
+        <div class="form-field">
+          <label for="street">Ulica:</label>
+          <input type="text" name="street" id="street" />
+          <small></small>
+        </div>
+        <div class="form-field">
+          <label for="city">Miasto:</label>
+          <input type="text" name="city" id="city" />
+          <small></small>
+        </div>
+        <div class="form-field">
+          <input type="submit" value="Wyślij" />
+        </div>
       </form>
+      <script src="js/app.js"></script>
     </main>
     <footer class="downside-bar">
       <address class="footer-address">

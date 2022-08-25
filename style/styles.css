@@ -105,14 +105,43 @@ body {
   font-size: 2em;
 }
 
-.main-form {
+.form {
   padding: 10px 10px;
 }
 
-.form-label {
-  text-transform: lowercase;
-  padding: 10px 0;
+.form-field {
+  margin-bottom: 5px;
+}
+
+.form-field label {
   display: block;
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  border: 2px solid #f0f0f0;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  display: block;
+  width: 30%;
+}
+
+.form-field input:focus {
+  outline: none;
+}
+
+.form-field.error input {
+  border-color: red;
+}
+
+.form-field.success input {
+  border-color: green;
+}
+
+.form-field small {
+  color: red;
 }
 
 .downside-bar {
